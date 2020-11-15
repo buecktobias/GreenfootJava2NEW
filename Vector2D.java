@@ -1,30 +1,50 @@
-/**
- * Write a description of class Vector2D here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Vector2D  
-{
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class Vector2D
-     */
-    public Vector2D()
-    {
+import java.util.Objects;
+
+/**
+ * The Vector2D class is a Vector in a two dimension environment.
+ * It has the attributes
+ *  x and y
+ * @author tobias bück
+ * @version 1
+ */
+public class Vector2D {
+
+    private double x;
+    private double y;
+
+    public Vector2D(double x, double y){
+        this.setX(x);
+        this.setY(y);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vector2D vector2D = (Vector2D) o;
+        return Double.compare(vector2D.x, x) == 0 &&
+                Double.compare(vector2D.y, y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

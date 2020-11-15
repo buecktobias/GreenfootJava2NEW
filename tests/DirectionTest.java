@@ -1,7 +1,4 @@
 package tests;
-
-import helper.Direction;
-import helper.Vector2D;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

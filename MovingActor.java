@@ -1,19 +1,23 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.World;
 
-/**
- * Write a description of class MovingActor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class MovingActor extends Entity
-{
-    /**
-     * Act - do whatever the MovingActor wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+public abstract class MovingActor extends Entity {
+    private Vector2D position;
+
+    public MovingActor() {
+
+    }
+
+    @Override
+    protected void addedToWorld(World world) {
+        super.addedToWorld(world);
+        this.position = new Vector2D(this.getX(), this.getY());
+    }
+
+    public Vector2D getPosition() {
+        return position;
+    }
+
+    public void setPosition(Vector2D position) {
+        this.position = position;
+    }
 }
