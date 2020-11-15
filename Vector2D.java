@@ -24,8 +24,8 @@ final public class Vector2D {
     }
 
     public Vector2D addVector(Vector2D vector2D){
-        double newX = this.x + vector2D.x;
-        double newY = this.y + vector2D.y;
+        double newX = this.getX() + vector2D.getX();
+        double newY = this.getY() + vector2D.getY();
         return new Vector2D(newX, newY);
     }
 
@@ -41,6 +41,14 @@ final public class Vector2D {
 
     public double getY() {
         return y;
+    }
+
+    public int getIntX() {
+        return (int)Math.round(x);
+    }
+
+    public int getIntY() {
+        return (int)Math.round(y);
     }
 
     @Override
