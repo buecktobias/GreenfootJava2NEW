@@ -20,5 +20,9 @@ public class MyWorld extends World
         super(600, 400, 1);
         Snake s = new Snake();
         this.addObject(s, 100, 100);
+        Rabbit r = new Rabbit();
+        this.addObject(r, 400, 400);
+        Player p = new Player(r);
+        this.addObject(p,0,0);
     }
 }
