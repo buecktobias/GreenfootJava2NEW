@@ -1,14 +1,17 @@
 import greenfoot.World;
 
+import java.util.Random;
+
 public abstract class MovingActor extends Entity {
     private Vector2D position;
     private Vector2D currentSpeed;
     private int speed;
 
-    public MovingActor() {
+    public MovingActor(int speed) {
         super();
         this.currentSpeed = new Vector2D(0,0);
         this.position = new Vector2D(100, 100);
+        this.speed = speed;
     }
 
     public void act(){
@@ -21,9 +24,37 @@ public abstract class MovingActor extends Entity {
         this.position = new Vector2D(this.getX(), this.getY());
     }
 
-    protected void moveDirection(Direction direction, double distance){
-        Vector2D newMovingVector = direction.getVector2D().scalarMultiplication(distance);
-        this.moveBy(newMovingVector);
+    protected void doRandomMovement(double changeDirectionProbability, double probabilityNoMovement){
+        Random r = new Random();
+        double p = r.nextDouble();
+        if (p < changeDirectionProbability){
+            this.changeToARandomDirectionOrStop(probabilityNoMovement);
+        }
+    }
+
+    protected void stopMovement(){
+        this.changeCurrentSpeed(new Vector2D(0,0));
+    }
+    protected void changeToARandomDirectionOrStop(double stopProb){
+        Random r = new Random();
+        double p = r.nextDouble();
+        if (p < stopProb){
+            this.stopMovement();
+        }else{
+            this.changeToARandomDirection();
+        }
+    }
+
+    protected void changeToARandomDirection(){
+        this.changeDirection(Direction.getRandomDirection());
+    }
+
+    protected void changeDirection(Direction d){
+        changeCurrentSpeed(d.getVector2D().scalarMultiplication(this.speed));
+    }
+
+    protected void changeCurrentSpeed(Vector2D newSpeed){
+        this.currentSpeed = newSpeed;
     }
 
     protected void moveBy(Vector2D vector2D){

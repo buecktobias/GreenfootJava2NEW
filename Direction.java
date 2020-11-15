@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Direction {
     private final Values value;
@@ -10,6 +11,12 @@ public class Direction {
     public Direction(Values value){
         this.value = value;
     }
+    public static Direction getRandomDirection(){
+        Direction.Values[] vals = Values.values();
+        int randomIndex = new Random().nextInt(vals.length);
+        return new Direction(vals[randomIndex]);
+    }
+
     public Vector2D getVector2D() {
         switch (this.value){
             case UP:
