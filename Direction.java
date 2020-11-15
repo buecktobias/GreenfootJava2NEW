@@ -1,3 +1,4 @@
+
 public class Direction {
     private final Values value;
     public enum Values {
