@@ -12,7 +12,7 @@ public class Cooldown extends Countdown
     /**
      * Constructor for objects of class Cooldown
      */
-    public Cooldown(int cooldownTime, World w)
+    protected Cooldown(int cooldownTime, World w)
     {
         super(cooldownTime, w);
     }

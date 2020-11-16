@@ -17,7 +17,7 @@ public class Rabbit extends MovingActor implements  CanShoot
     @Override
     protected void addedToWorld(World world) {
         super.addedToWorld(world);
-        this.throwingCooldown = new Cooldown(10, this.getWorld());
+        this.throwingCooldown = this.createCooldown(10);
     }
 
     /**

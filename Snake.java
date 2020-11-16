@@ -12,7 +12,7 @@ public class Snake extends MovingActor implements CanBeHit
 
     @Override
     public void hit() {
-        this.getWorld().removeObject(this);
+        this.destroySelf();
     }
 
     /**

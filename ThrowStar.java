@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class ThrowStar extends Projectile
 {
+    private Countdown countdown;
+
     public ThrowStar(){
         super(5);
     }
@@ -21,16 +23,20 @@ public class ThrowStar extends Projectile
     public void act() 
     {
         super.act();
+        if(this.countdown != null && this.countdown.isDown()){
+            this.destroySelf();
+        }
     }
 
     protected void hasHit(List<CanBeHit> cbh){
         cbh.get(0).hit();
-        this.getWorld().removeObject(this);
+        this.destroySelf();
     }
 
     public void shoot(Direction d, CanShoot canShoot){
         super.shoot(canShoot);
         this.changeDirection(d);
+        this.countdown = this.createCooldown(20);
     }
 
 }

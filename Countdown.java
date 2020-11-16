@@ -20,7 +20,7 @@ public class Countdown extends Actor
 
     private int currentCount;
 
-    public Countdown(int START_COUNT, World w) {
+    protected Countdown(int START_COUNT, World w) {
         this.START_COUNT = START_COUNT;
         this.currentCount = START_COUNT;
         w.addObject(this,0,0);
