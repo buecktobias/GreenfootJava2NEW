@@ -6,12 +6,14 @@ public abstract class MovingActor extends Entity {
     private Vector2D position;
     private Vector2D currentSpeed;
     private int speed;
+    private Direction lastDirection;
 
     public MovingActor(int speed) {
         super();
         this.currentSpeed = new Vector2D(0,0);
         this.position = new Vector2D(100, 100);
         this.speed = speed;
+        this.lastDirection = new Direction(Direction.Values.RIGHT);
     }
 
     public void act(){
@@ -50,11 +52,17 @@ public abstract class MovingActor extends Entity {
     }
 
     protected void changeDirection(Direction d){
+        this.lastDirection = d;
         changeCurrentSpeed(d.getVector2D().scalarMultiplication(this.speed));
     }
 
     protected void changeCurrentSpeed(Vector2D newSpeed){
         this.currentSpeed = newSpeed;
+    }
+
+    protected void moveDirection(Direction d){
+        this.lastDirection = d;
+        this.moveBy(d.getVector2D().scalarMultiplication(this.speed));
     }
 
     protected void moveBy(Vector2D vector2D){
@@ -86,5 +94,9 @@ public abstract class MovingActor extends Entity {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public Direction getLastDirection() {
+        return lastDirection;
     }
 }
