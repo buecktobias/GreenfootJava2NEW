@@ -6,11 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rabbit extends MovingActor
+public class Rabbit extends MovingActor implements  CanShoot
 {
+
+    private Cooldown throwingCooldown;
     public Rabbit(){
         super(1);
     }
+
+    @Override
+    protected void addedToWorld(World world) {
+        super.addedToWorld(world);
+        this.throwingCooldown = new Cooldown(10, this.getWorld());
+    }
+
     /**
      * Act - do whatever the Rabbit wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,9 +29,12 @@ public class Rabbit extends MovingActor
         super.act();
     }
 
-    public void throwStar(){
-        ThrowStar s = new ThrowStar();
-        this.getWorld().addObject(s, this.getX(), this.getY());
-        s.getThrown(this.getLastDirection());
+
+    public void shoot(){
+        if (this.throwingCooldown.activate()) {
+            ThrowStar s = new ThrowStar();
+            this.getWorld().addObject(s, this.getX(), this.getY());
+            s.shoot(this.getLastDirection(), this);
+        }
     }
 }

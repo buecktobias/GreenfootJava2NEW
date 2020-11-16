@@ -44,7 +44,7 @@ public class Player extends Actor
             this.controlledRabbit.moveDirection(new Direction(Direction.Values.DOWN));
         }
         if (Greenfoot.isKeyDown(this.KEY_THROW)){
-            this.controlledRabbit.throwStar();
+            this.controlledRabbit.shoot();
         }
     }
 }

@@ -1,5 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+import java.util.List;
+
 /**
  * Write a description of class ThrowStar here.
  * 
@@ -21,7 +23,13 @@ public class ThrowStar extends Projectile
         super.act();
     }
 
-    public void getThrown(Direction d){
+    protected void hasHit(List<CanBeHit> cbh){
+        cbh.get(0).hit();
+        this.getWorld().removeObject(this);
+    }
+
+    public void shoot(Direction d, CanShoot canShoot){
+        super.shoot(canShoot);
         this.changeDirection(d);
     }
 
