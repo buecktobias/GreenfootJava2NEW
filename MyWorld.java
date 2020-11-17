@@ -9,6 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    @Override
+    public void removeObject(Actor object) {
+        super.removeObject(object);
+        if(object instanceof Entity){
+            Entity entity = (Entity) object;
+            entity.removedFromWorld(this);
+        }
+    }
 
     /**
      * Constructor for objects of class src.worlds.MyWorld

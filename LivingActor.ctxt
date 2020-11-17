@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=LivingActor
+comment0.text=\n\ Write\ a\ description\ of\ class\ LivingActor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=int\ getLife()
+comment2.params=newLife
+comment2.target=void\ setLife(int)
+comment3.params=
+comment3.target=void\ createLifeBar()
+comment4.params=
+comment4.target=boolean\ isInWorld()
+numComments=5

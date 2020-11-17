@@ -1,13 +1,23 @@
+import greenfoot.World;
+
 /**
  * Write a description of class Snake here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Snake extends MovingActor implements CanBeHit
+public class Snake extends MovingActor implements CanBeHit, LivingActor
 {
+    private int life;
     public Snake(){
         super(1);
+        this.setLife(20);
+    }
+
+    @Override
+    protected void addedToWorld(World world) {
+        super.addedToWorld(world);
+        this.createLifeBar();
     }
 
     @Override
@@ -23,5 +33,15 @@ public class Snake extends MovingActor implements CanBeHit
     {
         super.act();
         this.doRandomMovement(0.01, 0.5);
+    }
+
+    @Override
+    public int getLife() {
+        return life;
+    }
+
+    @Override
+    public void setLife(int life) {
+        this.life = life;
     }
 }

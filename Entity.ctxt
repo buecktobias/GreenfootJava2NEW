@@ -1,4 +1,20 @@
 #BlueJ class context
 comment0.target=Entity
 comment0.text=\n\ Write\ a\ description\ of\ class\ Entity\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-numComments=1
+comment1.params=
+comment1.target=Entity()
+comment2.params=world
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=world
+comment3.target=void\ removedFromWorld(greenfoot.World)
+comment4.params=
+comment4.target=void\ destroySelf()
+comment5.params=START_COUNT
+comment5.target=Countdown\ createCountdown(int)
+comment6.params=START_COUNT
+comment6.target=Cooldown\ createCooldown(int)
+comment7.params=
+comment7.target=boolean\ isInWorld()
+comment8.params=
+comment8.target=greenfoot.GreenfootImage\ getDefaultImage()
+numComments=9

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=IActor
+comment0.text=\n\ Write\ a\ description\ of\ class\ IActor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=int\ getX()
+comment2.params=
+comment2.target=int\ getY()
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ getImage()
+comment4.params=
+comment4.target=greenfoot.World\ getWorld()
+numComments=5

@@ -6,18 +6,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rabbit extends MovingActor implements  CanShoot
+public class Rabbit extends MovingActor implements  CanShoot, LivingActor
 {
-
+    private int life = 10;
     private Cooldown throwingCooldown;
     public Rabbit(){
         super(1);
+
     }
 
     @Override
     protected void addedToWorld(World world) {
         super.addedToWorld(world);
         this.throwingCooldown = this.createCooldown(10);
+        this.createLifeBar();
     }
 
     /**
@@ -36,5 +38,15 @@ public class Rabbit extends MovingActor implements  CanShoot
             this.getWorld().addObject(s, this.getX(), this.getY());
             s.shoot(this.getLastDirection(), this);
         }
+    }
+
+    @Override
+    public int getLife() {
+        return life;
+    }
+
+    @Override
+    public void setLife(int life) {
+        this.life = life;
     }
 }
