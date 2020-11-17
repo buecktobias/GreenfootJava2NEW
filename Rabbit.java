@@ -6,13 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rabbit extends MovingActor implements  CanShoot, LivingActor
+public class Rabbit extends MovingActor implements  CanShoot, LivingActor, Teleportable
 {
     private int life = 10;
     private Cooldown throwingCooldown;
     public Rabbit(){
         super(1);
-
     }
 
     @Override
