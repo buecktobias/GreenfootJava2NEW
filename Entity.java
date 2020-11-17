@@ -44,6 +44,6 @@ public abstract class Entity  extends Actor
     }
 
     public GreenfootImage getDefaultImage() {
-        return defaultImage;
+        return new GreenfootImage(defaultImage);
     }
 }

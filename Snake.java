@@ -22,7 +22,7 @@ public class Snake extends MovingActor implements CanBeHit, LivingActor
 
     @Override
     public void hit() {
-        this.destroySelf();
+        this.setLife(this.getLife() - 5);
     }
 
     /**
@@ -42,6 +42,10 @@ public class Snake extends MovingActor implements CanBeHit, LivingActor
 
     @Override
     public void setLife(int life) {
+        if(life < 0 ){
+            this.destroySelf();
+        }
+
         this.life = life;
     }
 }

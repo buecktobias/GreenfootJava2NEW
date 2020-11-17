@@ -19,8 +19,6 @@ public class LifeBar extends Entity
         int height = forA.getImage().getHeight();
         this.xOffset = 0;
         this.yOffset = - (height / 2) - 5;
-        this.getImage().setColor(new Color(255,0,0));
-        this.getImage().fillRect(0, 0,40, 10);
         forA.getWorld().addObject(this, x + this.xOffset, y + this.yOffset);
     }
     /**
@@ -40,7 +38,7 @@ public class LifeBar extends Entity
 
     }
     private void draw(){
-        this.setImage(this.getDefaultImage());
+        this.setImage(new GreenfootImage(this.getDefaultImage()));
         this.getImage().setColor(new Color(255,0,0));
         this.getImage().fillRect(0, 0,this.forActor.getLife(), 10);
     }
