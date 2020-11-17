@@ -75,9 +75,15 @@ public abstract class MovingActor extends Entity {
         return position;
     }
 
+    @Override
+    public void setLocation(int x, int y) {
+        Vector2D v = new Vector2D(x, y);
+        this.setPosition(v);
+    }
+
     public void setPosition(Vector2D position) {
         this.position = position;
-        this.setLocation(position.getIntX(), position.getIntY());
+        super.setLocation(position.getIntX(), position.getIntY());
     }
 
     public void setCurrentSpeed(Vector2D currentSpeed) {

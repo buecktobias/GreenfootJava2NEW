@@ -32,14 +32,7 @@ public class MyWorld extends World
         this.addObject(r, 400, 400);
         Player p = new Player(r);
         this.addObject(p,0,0);
-        prepare();
-    }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
+        Teleporter t1 = new Teleporter(new Vector2D(100, 200), new Vector2D(400, 100));
+        this.addObject(t1,0,0);
     }
 }

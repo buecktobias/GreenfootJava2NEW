@@ -15,4 +15,5 @@ interface IActor
     int getY();
     GreenfootImage getImage();
     World getWorld();
+    void setLocation(int x, int y);
 }

@@ -21,7 +21,7 @@ public class Cooldown extends Countdown
         this.setCurrentCount(this.getSTART_COUNT());
     }
 
-    private boolean isCooledDown(){
+    protected boolean isCooledDown(){
         return this.isDown();
     }
 
