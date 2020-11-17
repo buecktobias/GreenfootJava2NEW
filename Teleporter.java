@@ -13,6 +13,7 @@ public class Teleporter extends Entity
     private Vector2D positionTeleporter1;
     private Vector2D positionTeleporter2;
     private Cooldown teleportCooldown;
+    private final int TELEPORT_TIME = 200;
 
     public Teleporter(Vector2D positionTeleporter1, Vector2D positionTeleporter2){
         this.teleporter1 = new TeleporterObject();
@@ -30,7 +31,7 @@ public class Teleporter extends Entity
         super.addedToWorld(world);
         world.addObject(this.teleporter1, this.positionTeleporter1.getIntX(), this.positionTeleporter1.getIntY());
         world.addObject(this.teleporter2, this.positionTeleporter2.getIntX(), this.positionTeleporter2.getIntY());
-        this.teleportCooldown = this.createCooldown(100);
+        this.teleportCooldown = this.createCooldown(this.TELEPORT_TIME);
     }
 
     /**

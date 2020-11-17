@@ -11,7 +11,7 @@ public class Rabbit extends MovingActor implements  CanShoot, LivingActor, Telep
     private int life = 10;
     private Cooldown throwingCooldown;
     public Rabbit(){
-        super(1);
+        super(2);
     }
 
     @Override

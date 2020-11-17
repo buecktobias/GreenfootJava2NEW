@@ -34,5 +34,6 @@ public class MyWorld extends World
         this.addObject(p,0,0);
         Teleporter t1 = new Teleporter(new Vector2D(100, 200), new Vector2D(400, 100));
         this.addObject(t1,0,0);
+        this.setPaintOrder(Rabbit.class, MovingActor.class);
     }
 }
